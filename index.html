@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Something</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- FIRST SCREEN -->
+        <section id="recordScreen">
+
+            <h1>Say something...</h1>
+
+            <p class="subtitle">
+                I want to hear your voice.
+            </p>
+
+            <div class="wave-container">
+                <canvas id="waveCanvas"></canvas>
+            </div>
+
+            <button id="recordButton">
+                <span id="buttonIcon">🎙</span>
+                <span id="buttonText">Hold to record</span>
+            </button>
+
+            <p id="timer">00:00</p>
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+
+        <!-- FINAL SCREEN -->
+        <section id="finalScreen">
+
+            <div class="photo-wrapper">
+                <img src="song33.jpg" id="finalPhoto">
+            </div>
+
+            <h2>
+                This is how my dearest person sounds like.
+            </h2>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

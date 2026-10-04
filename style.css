@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background: linear-gradient(
+        -45deg,
+        #17142e,
+        #3a205d,
+        #182b4d,
+        #512b55
+    );
+
+    background-size: 400% 400%;
+
+    animation: gradient 12s ease infinite;
+
+    overflow: hidden;
+}
+
+
+/* BACKGROUND */
+
+@keyframes gradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* MAIN */
+
+.container {
+
+    width: 100%;
+    max-width: 700px;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+/* FIRST SCREEN */
+
+#recordScreen {
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+h1 {
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+
+.subtitle {
+
+    opacity: 0.7;
+
+    font-size: 17px;
+
+    margin-bottom: 55px;
+}
+
+
+/* WAVE */
+
+.wave-container {
+
+    width: 100%;
+
+    height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 35px;
+}
+
+
+#waveCanvas {
+
+    width: 100%;
+
+    height: 180px;
+}
+
+
+/* BUTTON */
+
+#recordButton {
+
+    border: none;
+
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+#recordButton:hover {
+
+    transform: scale(1.05);
+
+    background: rgba(255,255,255,0.22);
+}
+
+
+#recordButton.recording {
+
+    background: rgba(255,80,120,0.35);
+
+    box-shadow:
+        0 0 30px rgba(255,100,150,0.4);
+}
+
+
+#buttonIcon {
+
+    margin-right: 8px;
+}
+
+
+/* TIMER */
+
+#timer {
+
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    opacity: 0.6;
+}
+
+
+/* ERROR */
+
+#errorMessage {
+
+    margin-top: 20px;
+
+    color: #ffd1dc;
+
+    min-height: 25px;
+
+    font-size: 15px;
+}
+
+
+/* FINAL SCREEN */
+
+#finalScreen {
+
+    display: none;
+
+    opacity: 0;
+
+    transform: scale(0.9);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+
+#finalScreen.show {
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* PHOTO */
+
+.photo-wrapper {
+
+    width: 330px;
+
+    height: 330px;
+
+    margin: 0 auto 40px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 50px rgba(255,255,255,0.2);
+
+    animation: photoAppear 2s ease forwards;
+}
+
+
+#finalPhoto {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+@keyframes photoAppear {
+
+    0% {
+
+        transform: scale(0.2) rotate(-10deg);
+
+        opacity: 0;
+
+        filter: blur(20px);
+    }
+
+    100% {
+
+        transform: scale(1) rotate(0deg);
+
+        opacity: 1;
+
+        filter: blur(0);
+    }
+}
+
+
+#finalScreen h2 {
+
+    font-size: 30px;
+
+    font-weight: 300;
+
+    line-height: 1.4;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .photo-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+
+    #finalScreen h2 {
+        font-size: 24px;
+    }
+}
